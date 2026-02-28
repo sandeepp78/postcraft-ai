@@ -1,0 +1,79 @@
+/* c:/Users/sande/OneDrive/Desktop/Linkedin - project/postcraft-ai/frontend/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme System */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --accent-primary: #7c3aed;
+  --accent-secondary: #4f46e5;
+}
+
+.dark {
+  --bg-primary: #0a0a12;
+  --bg-secondary: #0f0f1a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-primary: #f5f5f5;
+  --text-muted: #9ca3af;
+  --accent-primary: #7c3aed;
+  --accent-secondary: #4f46e5;
+}
+
+@layer base {
+  body {
+    @apply m-0 p-0 font-sans text-gray-900 bg-white dark:bg-[#0f0f0f] dark:text-gray-100 transition-colors duration-200;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-secondary), var(--accent-primary));
+}
+
+/* Base keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
